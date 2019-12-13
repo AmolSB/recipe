@@ -10,6 +10,8 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { DropdownDirective } from 'src/app/shared/dropdown.directive';
+import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,14 @@ import { AlertModule } from 'ngx-bootstrap';
     RecipeDetailComponent,
     RecipeItemComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
     AlertModule.forRoot()
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
