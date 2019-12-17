@@ -12,6 +12,11 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { AlertModule } from 'ngx-bootstrap';
 import { DropdownDirective } from 'src/app/shared/dropdown.directive';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
+import { AppRoutingModule } from './app-routing.module';
+import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecipeService } from './recipes/recipe.service';
 
 @NgModule({
   declarations: [
@@ -23,13 +28,18 @@ import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    RecipesStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     AlertModule.forRoot()
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
